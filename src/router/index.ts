@@ -12,8 +12,8 @@ const router = createRouter({
     },
     {
       path: '/testimonial',
-       name: 'testimonial',
-       component: TestimonialPage
+      name: 'testimonial',
+      component: TestimonialPage
     }
   ]
 })

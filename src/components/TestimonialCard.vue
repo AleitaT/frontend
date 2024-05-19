@@ -2,10 +2,10 @@
 import ProfileThumbnail from '@/assets/profile-thumbnail.png'
 
 withDefaults(defineProps<{
-  name: string,
-  username: string,
-  image: string,
-  body: string
+  name?: string,
+  username?: string,
+  image?: string,
+  body?: string
 }>(), {
   name: 'Sarah Dole',
   username: 'sarahdole',
