@@ -53,7 +53,7 @@ withDefaults(defineProps<{
   --border-radius: 8px;
 
   display: flex;
-  border: solid 1px var(--gradient-2);
+  border: solid 1px var(--gradient-1);
   border-radius: var(--border-radius);
   box-sizing: border-box;
   flex-direction: column;
