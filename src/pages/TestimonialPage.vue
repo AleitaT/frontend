@@ -13,9 +13,8 @@ import Testimonial from '@/components/TestimonialCard.vue'
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh);
   height: fit-content;
-  padding-top: 80px;
   width: 100dvw;
   padding: 24px;
 
