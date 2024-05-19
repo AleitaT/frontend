@@ -63,6 +63,7 @@ withDefaults(defineProps<{
   max-width: 100vw;
   color: var(--neutral-900);
   filter: drop-shadow(1px 1px 1px var(--gradient-2));
+  background-color: var(--gradient-1);
 
   & .testimonial--details {
     display: flex;
