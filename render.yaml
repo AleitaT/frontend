@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: frontend-app
+    env: static
+    buildCommand:
+      npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    buildFilter:
+      paths:
+        - /**
