@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "postcss-nesting": "^12.1.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
