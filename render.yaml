@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: frontend-app
+    name: aleita-frontend-app
     env: static
     buildCommand:
       npm run build
