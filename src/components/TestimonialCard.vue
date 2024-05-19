@@ -1,6 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import ProfileThumbnail from '@/assets/profile-thumbnail.png'
-const testimonial = {
+
+withDefaults(defineProps<{
+  name: string,
+  username: string,
+  image: string,
+  body: string
+}>(), {
   name: 'Sarah Dole',
   username: 'sarahdole',
   image: ProfileThumbnail,
@@ -8,22 +14,29 @@ const testimonial = {
         abstract images for my design projects,
         and I'm thrilled to have found this platform.
         The variety and depth of crativity are astounding!`
-}
+});
+
 </script>
 
 <template>
   <div class="testimonial-card">
-    <div class="person-details">
-      <div class="person-image">
-        <img :src="ProfileThumbnail"/>
+    <div class="testimonial--details">
+      <div class="testimonial--image">
+        <slot name="image">
+          <img :src="ProfileThumbnail"/>
+        </slot>
       </div>
-      <div class="person-info">
-        <p class="person-name">{{ testimonial.name }}</p>
-        <p class="person-username">@{{ testimonial.username }}</p>
+      <div class="testimonial--info">
+        <p class="testimonial--name">
+          <slot name="name">{{ name }}</slot>
+        </p>
+        <p class="testimonial--username">
+          <slot name="username">@{{ username }}</slot>
+        </p>
       </div>
     </div>
-    <div class="testimonial">
-      <p>{{ testimonial.body }}</p>
+    <div class="testimonial--content">
+      <p>{{ body }}</p>
     </div>
   </div>
 </template>c
@@ -35,39 +48,39 @@ const testimonial = {
   --neutral-600: #525252;
   --gradient-1: #F9FAFB;
   --gradient-2: #D2D6DB;
-
   --image-size: 48px;
   --padding: 24px;
+  --border-radius: 8px;
 
   display: flex;
-  border: solid 1px var(--neutral-600);
-  border-radius: 5px;
+  border: solid 1px var(--gradient-2);
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   flex-direction: column;
   padding: var(--padding);
-  gap: var(--padding);
+  gap: 16px;
   width: 340px;
   max-width: 100vw;
   color: var(--neutral-900);
+  filter: drop-shadow(1px 1px 1px var(--gradient-2));
 
-  & .person-details {
+  & .testimonial--details {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: var(--padding);
 
-
-    & p.person-name {
+    & p.testimonial--name {
       font-size: 18px;
       font-weight: 600;
     }
 
-    & p.person-username {
+    & p.testimonial--username {
       font-size: 14px;
       color: var(--neutral-600);
     }
 
-    & .person-image {
+    & .testimonial--image {
       width: var(--image-size);
 
       & img {
@@ -77,14 +90,16 @@ const testimonial = {
       }
     }
 
-    & .details {
+    & .testimonial--details {
       width: 100%;
       display: flex;
       flex-direction: column;
-      font-size: 16px;
     }
   }
 
-  & .testimonial {}
+  & .testimonial--content {
+    font-size: 16px;
+    color: var(--neutral-600)
+  }
 }
 </style>
