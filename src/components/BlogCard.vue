@@ -10,7 +10,7 @@ withDefaults(defineProps<{
   image?: string,
 }>(), {
   title: 'Top 5 Living Room Inspirations',
-  body: 'Curated vibrants colors for your living, make it pop & calm in the same time.',
+  body: 'Curated vibrantsvi brantsvibran tsvibra ntsvibrantsvibrantsvibrantsvibrantsvibrantsvibrants colors for your living, make it pop & calm in the same time.',
   image: DefaultBackground
 });
 
@@ -38,7 +38,7 @@ withDefaults(defineProps<{
       <!-- main text -->
       <div class="blog-card--text">
         <p>
-          <slot name="body">{{  body }}</slot>
+          <slot name="body">{{ body }}</slot>
         </p>
       </div>
       <!-- action -->
@@ -75,7 +75,6 @@ withDefaults(defineProps<{
       object-fit: cover;
       height: 288px;
       width: 340px;
-
     }
   }
 
@@ -101,7 +100,12 @@ withDefaults(defineProps<{
       }
     }
 
-    & .blog-card--text {}
+    & .blog-card--text p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
 
     & .blog-card--footer {
       padding-top: 8px;
