@@ -5,7 +5,7 @@ withDefaults(defineProps<{
   url?: string | undefined,
   disabled?: boolean
 }>(), {
-  url: null,
+  url: undefined,
   buttonType: 'a',
   disabled: false
 });
