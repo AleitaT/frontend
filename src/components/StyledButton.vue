@@ -35,6 +35,7 @@ withDefaults(defineProps<{
   --link-color-disabled: #A3A3A3;
   --link-gap: 6px;
   --link-text-padding: 2px;
+  --link-active-box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
   cursor: pointer;
   display: inline-block;
   width: fit-content;
@@ -77,7 +78,7 @@ withDefaults(defineProps<{
 
     &:active {
       color: var(--link-color-hover);
-      box-shadow: var(--box-shadow);
+      box-shadow: var(--link-active-box-shadow);
     }
   }
 }
