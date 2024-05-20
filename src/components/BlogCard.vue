@@ -9,8 +9,8 @@ withDefaults(defineProps<{
   body?: string,
   image?: string,
 }>(), {
-  title: 'Top 5 Living Room Inspirations',
-  body: 'Curated vibrantsvi brantsvibran tsvibra ntsvibrantsvibrantsvibrantsvibrantsvibrantsvibrants colors for your living, make it pop & calm in the same time.',
+  title: 'Top 5 Living Room Inspirationsop 5 Living Room Inspirations',
+  body: 'Curated vibrants colors for your living, make it pop & calm in the same time.',
   image: DefaultBackground
 });
 
@@ -90,6 +90,13 @@ withDefaults(defineProps<{
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      & p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
 
       & .blog-card--tags {
         display: flex;
