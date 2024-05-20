@@ -22,7 +22,6 @@ import Testimonial from '@/components/TestimonialCard.vue'
   &.page__testimonial {
     --gradient-1: #F9FAFB;
     --gradient-2: #D2D6DB;
-    background: rgb(249, 250, 251);
     background: linear-gradient(45deg, rgba(249, 250, 251, 1) 0%, rgba(210, 214, 219, 1) 100%);
   }
 }
