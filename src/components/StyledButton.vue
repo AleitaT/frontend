@@ -33,7 +33,8 @@ withDefaults(defineProps<{
   --link-color: #4338CA;
   --link-color-hover: #3730A3;
   --link-color-disabled: #A3A3A3;
-
+  --link-gap: 6px;
+  --link-text-padding: 2px;
   cursor: pointer;
   display: inline-block;
   width: fit-content;
@@ -45,7 +46,7 @@ withDefaults(defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--link-gap);
 
   &.disabled {
     cursor: none;
@@ -56,15 +57,15 @@ withDefaults(defineProps<{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 0 2px;
+    gap: var(--link-gap);
+    padding: 0 var(--link-text-padding);
   }
 
   & span.styled-button--icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: var(--link-gap);
   }
 
   &.m-link {
@@ -76,7 +77,7 @@ withDefaults(defineProps<{
 
     &:active {
       color: var(--link-color-hover);
-      box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
+      box-shadow: var(--box-shadow);
     }
   }
 }
