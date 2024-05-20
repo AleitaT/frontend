@@ -20,8 +20,8 @@ import BlogCard from '@/components/BlogCard.vue'
 
   &.page__blog-card {
     --gradient-1: #F9FAFB;
-    align-items: start;
     --gradient-2: #D2D6DB;
+    align-items: start;
     padding: 0 24px !important;
     background: linear-gradient(45deg, rgba(249, 250, 251, 1) 0%, rgba(210, 214, 219, 1) 100%);
   }
