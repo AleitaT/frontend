@@ -1,14 +1,5 @@
 <script setup lang="ts">
 
-withDefaults(defineProps<{
-  buttonType?: 'a' | 'button' | 'router',
-  url?: string | undefined,
-  disabled?: boolean
-}>(), {
-  url: null,
-  buttonType: 'a',
-  disabled: false
-});
 </script>
 
 <template>
