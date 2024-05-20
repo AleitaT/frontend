@@ -51,6 +51,7 @@ withDefaults(defineProps<{
   --image-size: 48px;
   --padding: 24px;
   --border-radius: 8px;
+  --font-family: 'Noto Sans', sans-serif;
 
   display: flex;
   border: solid 1px var(--gradient-1);
