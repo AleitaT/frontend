@@ -9,7 +9,7 @@ withDefaults(defineProps<{
   body?: string,
   image?: string,
 }>(), {
-  title: 'Top 5 Living Room Inspirationsop 5 Living Room Inspirations',
+  title: 'Top 5 Living Room Inspirations',
   body: 'Curated vibrants colors for your living, make it pop & calm in the same time.',
   image: DefaultBackground
 });
