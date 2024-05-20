@@ -55,6 +55,9 @@ withDefaults(defineProps<{
 
 <style lang="postcss">
 .blog-card {
+
+  --blog-card-gap: 16px;
+  --blog-card-padding: 24px;
   margin-top: 120px;
   height: 504px;
   width: 340px;
@@ -81,9 +84,9 @@ withDefaults(defineProps<{
   & .blog-card--content {
     display: flex;
     height: 216px;
-    padding: 24px;
+    padding: var(--blog-card-padding);
     flex-direction: column;
-    gap: var(--gap);
+    gap: 12px;
     background-color: white;
 
     & .blog-card--header {
@@ -117,7 +120,7 @@ withDefaults(defineProps<{
     }
 
     & .blog-card--footer {
-      padding-top: 8px;
+      padding-top: 12px;
     }
   }
 }
