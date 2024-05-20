@@ -112,6 +112,8 @@ withDefaults(defineProps<{
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     & .blog-card--footer {
