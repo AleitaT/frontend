@@ -18,8 +18,8 @@ withDefaults(defineProps<{
 
 <template>
   <div class="blog-card">
-    <div class="blog-card--image" :style="{ 'background-image': 'url(' + DefaultBackground + ')' }">
-
+    <div class="blog-card--image">
+      <img :src="DefaultBackground" alt="Living room"/>
     </div>
     <div class="blog-card--content">
       <!-- header -->
@@ -55,6 +55,7 @@ withDefaults(defineProps<{
 
 <style lang="postcss">
 .blog-card {
+  margin-top: 120px;
   height: 504px;
   width: 340px;
   display: flex;
@@ -63,12 +64,19 @@ withDefaults(defineProps<{
   border: 1px solid #E5E5E5;
   border-radius: 8px;
   box-shadow: var(--default-box-shadow);
+  box-sizing: border-box;
 
   & .blog-card--image {
     height: 288px;
-    background-position: center;
-    background-size: cover;
     border-radius: 8px 8px 0 0;
+    display: block;
+
+    & img {
+      object-fit: cover;
+      height: 288px;
+      width: 340px;
+
+    }
   }
 
   & .blog-card--content {
