@@ -18,8 +18,11 @@ withDefaults(defineProps<{
     :is="buttonType"
     :disabled="disabled"
     :url="url">
-    <span class="styled-button--span">
-      <slot></slot>
+    <span class="styled-button--text">
+      <slot name="text"></slot>
+    </span>
+    <span class="styled-button--icon">
+      <slot name="icon"></slot>
     </span>
   </component>
 </template>
@@ -39,13 +42,25 @@ withDefaults(defineProps<{
   line-height: 24px;
   font-weight: 500;
   font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 
   &.disabled {
     cursor: none;
     color: var(--link-color-disabled);
   }
 
-  & span.styled-button--span {
+  & span.styled-button--text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 2px;
+  }
+
+  & span.styled-button--icon {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -2,6 +2,7 @@
 import StyledButton from '@/components/StyledButton.vue';
 import DefaultBackground from '@/assets/spacejoy-YqFz7UMm8qE-unsplash.jpg';
 import ArrowRightLine from '@/components/icons/ArrowRightLine.vue';
+import PillTag from '@/components/PillTag.vue';
 
 withDefaults(defineProps<{
   title?: string,
@@ -24,7 +25,9 @@ withDefaults(defineProps<{
       <!-- header -->
       <div class="blog-card--header">
         <div class="blog-card--tags">
-          <slot name="tags"></slot>
+          <slot name="tags">
+            <PillTag>Interior</PillTag>
+          </slot>
         </div>
         <div class="blog-card--title">
           <p class="text-lg text-semibold">
@@ -41,7 +44,8 @@ withDefaults(defineProps<{
       <!-- action -->
       <div class="blog-card--footer">
         <StyledButton url="/" buttonType="a" test="Read more">
-          Read more <ArrowRightLine/>
+          <template v-slot:text>Read more</template>
+          <template v-slot:icon><ArrowRightLine/></template>
         </StyledButton>
       </div>
     </div>
@@ -80,7 +84,9 @@ withDefaults(defineProps<{
       flex-direction: column;
       gap: 8px;
 
-      & .blog-card--tags {}
+      & .blog-card--tags {
+        display: flex;
+      }
 
       & .blog-card--title {
         font-family: var(--font-family);
