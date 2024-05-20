@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import StyledButton from '@/components/StyledButton.vue';
 import DefaultBackground from '@/assets/spacejoy-YqFz7UMm8qE-unsplash.jpg';
+import ArrowRightLine from '@/components/icons/ArrowRightLine.vue';
 
 withDefaults(defineProps<{
   title?: string,
-  username?: string,
+  body?: string,
   image?: string,
 }>(), {
   title: 'Top 5 Living Room Inspirations',
@@ -26,7 +27,7 @@ withDefaults(defineProps<{
           <slot name="tags"></slot>
         </div>
         <div class="blog-card--title">
-          <p>
+          <p class="text-lg text-semibold">
             <slot name="title">{{  title }}</slot>
           </p>
         </div>
@@ -38,9 +39,9 @@ withDefaults(defineProps<{
         </p>
       </div>
       <!-- action -->
-      <div class="blog-card--more">
-        <StyledButton buttonType="link" test="Read more">
-          Read more
+      <div class="blog-card--footer">
+        <StyledButton url="/" buttonType="a" test="Read more">
+          Read more <ArrowRightLine/>
         </StyledButton>
       </div>
     </div>
@@ -50,12 +51,14 @@ withDefaults(defineProps<{
 
 <style lang="postcss">
 .blog-card {
-  border-radius: 8px;
   height: 504px;
   width: 340px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
 
   & .blog-card--image {
     height: 288px;
@@ -73,12 +76,22 @@ withDefaults(defineProps<{
     background-color: white;
 
     & .blog-card--header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
       & .blog-card--tags {}
 
-      & .blog-card--title {}
+      & .blog-card--title {
+        font-family: var(--font-family);
+      }
     }
 
     & .blog-card--text {}
+
+    & .blog-card--footer {
+      padding-top: 8px;
+    }
   }
 }
 </style>
