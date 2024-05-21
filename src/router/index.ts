@@ -24,6 +24,7 @@ const router = createRouter({
     {
       path: '/breweries',
       name: 'BreweriesPage',
+      // @ts-ignore
       component: () => import('../pages/BreweriesPage.vue')
     }
   ]
