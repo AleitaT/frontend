@@ -20,6 +20,11 @@ const router = createRouter({
       path: '/blog-card',
       name: 'blogcard',
       component: BlogCardPage
+    },
+    {
+      path: '/breweries',
+      name: 'BreweriesPage',
+      component: () => import('../pages/BreweriesPage.vue')
     }
   ]
 })

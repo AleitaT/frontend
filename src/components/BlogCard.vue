@@ -1,40 +1,44 @@
 <script setup lang="ts">
-import StyledButton from '@/components/StyledButton.vue';
+import StyledLink from '@/components/StyledLink.vue';
 import DefaultBackground from '@/assets/spacejoy-YqFz7UMm8qE-unsplash.jpg';
 import ArrowRightLine from '@/components/icons/ArrowRightLine.vue';
 import PillTag from '@/components/PillTag.vue';
 
 withDefaults(defineProps<{
   title?: string,
+  tag?: string,
   body?: string,
   image?: string,
+  link?: string
 }>(), {
   title: 'Top 5 Living Room Inspirations',
+  tag: 'Interior',
   body: 'Curated vibrants colors for your living, make it pop & calm in the same time.',
-  image: DefaultBackground
+  image: DefaultBackground,
+  link: ''
 });
 
 </script>
 
 <template>
-  <div class="blog-card">
+  <article class="blog-card">
     <div class="blog-card--image">
-      <img :src="DefaultBackground" alt="Living room"/>
+      <img :src="DefaultBackground" title="picture of brewery" alt="Living room"/>
     </div>
     <div class="blog-card--content">
       <!-- header -->
-      <div class="blog-card--header">
+      <header class="blog-card--header">
         <div class="blog-card--tags">
           <slot name="tags">
-            <PillTag>Interior</PillTag>
+            <PillTag><slot name="tag">{{tag}}</slot></PillTag>
           </slot>
         </div>
         <div class="blog-card--title">
-          <p class="text-lg text-semibold">
+          <h2 class="text-lg text-semibold">
             <slot name="title">{{  title }}</slot>
-          </p>
+          </h2>
         </div>
-      </div>
+      </header>
       <!-- main text -->
       <div class="blog-card--text">
         <p>
@@ -43,18 +47,19 @@ withDefaults(defineProps<{
       </div>
       <!-- action -->
       <div class="blog-card--footer">
-        <StyledButton url="/" buttonType="a" test="Read more">
-          <template v-slot:text>Read more</template>
-          <template v-slot:icon><ArrowRightLine/></template>
-        </StyledButton>
+        <slot name="cta">
+          <StyledLink url="/" buttonType="a" test="Read more">
+            <template v-slot:text>Read more</template>
+            <template v-slot:icon><ArrowRightLine/></template>
+          </StyledLink>
+        </slot>
       </div>
     </div>
-  </div>
-  
+  </article>  
 </template>
 
 <style lang="postcss">
-.blog-card {
+article.blog-card {
 
   --blog-card-gap: 16px;
   --blog-card-padding: 24px;

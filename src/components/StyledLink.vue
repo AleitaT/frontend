@@ -1,34 +1,32 @@
 <script setup lang="ts">
 
 withDefaults(defineProps<{
-  buttonType?: 'a' | 'button' | 'router',
   url?: string | undefined,
   disabled?: boolean
 }>(), {
   url: undefined,
-  buttonType: 'a',
   disabled: false
 });
 </script>
 
 <template>
-  <component
-    class="styled-button"
-    :class="[{ 'm-link' : buttonType === 'a' }]"
-    :is="buttonType"
+  <a
+    class="styled-link"
+    :class="['m-link']"
     :disabled="disabled"
-    :url="url">
+    target="_blank"
+    :href="url">
     <span class="styled-button--text">
       <slot name="text"></slot>
     </span>
     <span class="styled-button--icon">
       <slot name="icon"></slot>
     </span>
-  </component>
+  </a>
 </template>
 
 <style lang="postcss">
-.styled-button {
+a.styled-link {
 
   --link-color: #4338CA;
   --link-color-hover: #3730A3;
@@ -48,6 +46,7 @@ withDefaults(defineProps<{
   align-items: center;
   justify-content: center;
   gap: var(--link-gap);
+  text-decoration: none;
 
   &.disabled {
     cursor: none;
