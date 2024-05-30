@@ -26,6 +26,12 @@ const router = createRouter({
       name: 'BreweriesPage',
       // @ts-ignore
       component: () => import('../pages/BreweriesPage.vue')
+    },
+    {
+      path: '/buttons',
+      name: 'Buttons',
+      // @ts-ignore
+      component: () => import('../pages/ButtonsPage.vue')
     }
   ]
 })

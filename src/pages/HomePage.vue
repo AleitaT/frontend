@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import StyledButton from '@/components/StyledButton.vue';
 </script>
 
 <template>
@@ -6,6 +7,8 @@
       <header>
         <div class="wrapper">
           <nav>
+            <StyledButton link="/">Hello</StyledButton>
+            <StyledButton @click="alert('hello')">Hello</StyledButton>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/testimonial">Testimonial</RouterLink>
       </nav>
